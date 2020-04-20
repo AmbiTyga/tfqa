@@ -19,7 +19,7 @@ from transformers import BertTokenizer, AdamW, BertModel, BertPreTrainedModel, B
 
 def get_class_accuracy(logits, labels):
     predictions = np.argmax(F.softmax(logits,dim=1).cpu().data.numpy(), axis=1)
-    return np.float32(np.sum(predictions=labels)) / len(labels), len(labels)
+    return np.float32(np.sum(predictions==labels)) / len(labels), len(labels)
 
 def get_position_accuracy(logits, labels):
     predictions = np.argmax(F.softmax(logits,dim=1).cpu().data.numpy(), axis=1)
