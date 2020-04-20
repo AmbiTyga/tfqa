@@ -104,10 +104,10 @@ class Collator(object):
         candidate_end = data['negative_end']
         candidate_words = data['negative_text']        
 
-        words_to_tokens_index = []
+        #words_to_tokens_index = []
         candidate_tokens = []
         for i, word in enumerate(candidate_words):
-            words_to_tokens_index.append(len(candidate_tokens))
+            #words_to_tokens_index.append(len(candidate_tokens))
             if re.match(r'<.+>', word):  # remove paragraph tag
                 continue
             tokens = self.tokenizer.tokenize(word)
